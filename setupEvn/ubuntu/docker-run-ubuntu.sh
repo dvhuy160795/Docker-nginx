@@ -6,5 +6,5 @@ SOURCEPATH=`dirname $SCRIPT`
 chmod -R 777 $SOURCEPATH/../../source/storage/
 
 #run docker-compose
-docker rm -f huydv-mysql server-nginx huydv-php
+docker rm -f huydv-mysql server-nginx huydv-php elasticsearch
 docker-compose -f $SOURCEPATH/../docker-compose.yml up
