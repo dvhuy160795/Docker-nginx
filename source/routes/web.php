@@ -19,3 +19,8 @@ Route::prefix('attachment')->group(function () {
     Route::get('getAttachment', 'AttachmentController@getAttachment');
 });
 
+Route::prefix('post')->group(function () {
+    Route::get('getPosts', 'PostController@getPosts');
+});
+
+
