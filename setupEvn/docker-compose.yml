@@ -32,6 +32,19 @@ services:
     volumes:
       - .././db:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
+    ports:
+      - 3306:80
+  phpmyadmin:
+    image: "phpmyadmin/phpmyadmin"
+    container_name: phpmyadmin
+    restart: always
+    hostname: phpmyadmin
+    networks:
+      - my-network
+    environment:
+      - PMA_HOST=huydv-mysql
+    ports:
+      - 8081:80
   php:
     container_name: huydv-php
     build:
