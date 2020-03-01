@@ -20,7 +20,9 @@ Route::prefix('attachment')->group(function () {
 });
 
 Route::prefix('post')->group(function () {
+	Route::get('index', 'PostController@index');
     Route::get('getPosts', 'PostController@getPosts');
+    Route::post('addPost', 'PostController@addPost');
 });
 
 
