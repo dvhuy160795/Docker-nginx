@@ -8,8 +8,7 @@ import Container from '@material-ui/core/Container';
 export default class Main extends Component {
     render() {
         return (
-            <Container>
-                <Grid xs="12">
+                <Grid>
                     <Grid xs="6">
                         <FormPost/>
                     </Grid>
@@ -17,7 +16,6 @@ export default class Main extends Component {
                         list
                     </Grid>
                 </Grid>
-            </Container>
         );
     }
 }

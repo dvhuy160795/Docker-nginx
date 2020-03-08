@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 export default class FormPost extends Component {
 	constructor() {
@@ -21,8 +22,7 @@ export default class FormPost extends Component {
     render() {
         return (
             <form id="posts-form" onSubmit={this.handleSubmit}>
-		        <label htmlFor="username">Enter username</label>
-		        <input id="username" name="username" type="text" />
+            	<TextField id="username" name="username" label="Enter username" />
 
 		        <label htmlFor="email">Enter your email</label>
 		        <input id="email" name="email" type="email" />
