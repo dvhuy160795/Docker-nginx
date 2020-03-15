@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from './navbar';
-import maintaincss from '../../../css/maintain.css';
+import '../../../css/maintain.css';
+import Grid from '@material-ui/core/Grid';
+import MenuLeft from "./menu";
 
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
     paper: {
+        height: 140,
+        width: 100,
+    },
+    control: {
         padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
     },
 }));
 
@@ -24,29 +28,27 @@ export default function Layout() {
     };
 
     return (
-        <div className={classes.root}>
-            <div id="formAddUser" className={maintaincss.width13}>
+        <Grid container className={classes.root} spacing={2}>
+            <Grid item xs={2}>
+                <Grid container justify="center" spacing={spacing}>
+                    <MenuLeft/>
+                </Grid>
+            </Grid>
+            <Grid item xs={10}>
+                <Grid container id={"huydv"} justify="center" spacing={spacing}>
 
-            </div>
-            <div id="listUsers">
-                <table id="tblListUsers">
-                    <thead>
-                    <tr>
-                        <th>User Name</th>
-                        <th>User Age</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>huydv</td>
-                        <td>25</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                </Grid>
+            </Grid>
+            <Grid item xs={12} style={{position:"fixed",bottom:"2px" }} className="width100p">
+                <Grid container justify="center" spacing={spacing}>
+                    <Navbar/>
+                </Grid>
+            </Grid>
+
+        </Grid>
     );
 }
+
 
 
 ReactDOM.render(<Layout />, document.querySelector('#body-main'));
