@@ -1,0 +1,17 @@
+#form-user{
+
+}
+
+#form-user table tr th {
+	text-align: left;
+	width: 150px;
+}
+
+#form-user table tr td{
+	text-align: center;
+	width: 200px;
+}
+
+#form-user table tr td input{
+	width: 200px;
+}
