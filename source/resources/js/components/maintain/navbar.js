@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Oclock from './oclock.js';
 
 const useStyles = makeStyles(theme => ({
     grow: {
@@ -187,7 +188,9 @@ export default function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div className={classes.grow} />
+                    <div className={classes.grow} >
+                        <Oclock/>
+                    </div>
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">

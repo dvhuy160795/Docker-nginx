@@ -28,16 +28,13 @@ export default function Layout() {
     };
 
     return (
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container className={classes.root} spacing={2} style={{height: '87vh'}}>
             <Grid item xs={2}>
                 <Grid container justify="center" spacing={spacing}>
                     <MenuLeft/>
                 </Grid>
             </Grid>
-            <Grid item xs={10}>
-                <Grid container id={"huydv"} justify="center" spacing={spacing}>
-
-                </Grid>
+            <Grid item xs={10} id={"huydv"}>
             </Grid>
             <Grid item xs={12} style={{position:"fixed",bottom:"2px" }} className="width100p">
                 <Grid container justify="center" spacing={spacing}>

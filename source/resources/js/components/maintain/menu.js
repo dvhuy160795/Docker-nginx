@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,6 +16,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import People from '@material-ui/icons/People';
 import Person from '@material-ui/icons/PersonPin';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+
+import ManageUsers from './InterfaceSetting/ManageUsers.js';
 
 const drawerWidth = 240;
 
@@ -70,7 +73,14 @@ function MenuLeft(props) {
     };
 
     const configFunction = (name) => {
-        console.log(name);
+        switch (name) {
+            case "Users":
+            ReactDOM.render(<ManageUsers/>, document.querySelector('#huydv'));
+            break;
+            default:
+            ReactDOM.render("Opp!", document.querySelector('#huydv'));
+            break;
+        }
     };
 
     const drawer = (
@@ -78,7 +88,7 @@ function MenuLeft(props) {
             <Divider />
             <List>
                 {['Users', 'Group Users', 'Permissions'].map((text, index) => (
-                    <ListItem button key={text} onClick={configFunction.bind(this,"11111")}>
+                    <ListItem button key={text} onClick={configFunction.bind(this,text)}>
                         <ListItemIcon>
                         {switchIcons(text)}
                         </ListItemIcon>
