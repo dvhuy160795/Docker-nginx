@@ -29,8 +29,8 @@ Route::prefix('maintain')->group(function () {
         Route::get('/', 'MaintainController@index');
 
         Route::get('manageUsers', 'ManageUsersController@index');
-        Route::get('getManageUsers', 'ManageUsersController@index');
-        Route::post('postManageUsers', 'ManageUsersController@index');
+        Route::get('getManageUsers', 'ManageUsersController@getUsers');
+        Route::post('postManageUsers', 'ManageUsersController@postUser');
         Route::put('putManageUsers', 'ManageUsersController@index');
         Route::delete('deleteManageUsers', 'ManageUsersController@index');
 

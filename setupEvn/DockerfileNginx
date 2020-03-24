@@ -1,5 +1,5 @@
 FROM nginx
 
 WORKDIR /home/Docker
-COPY ./ /home/Docker
+COPY ./ /
 RUN chmod -R 777 /home/Docker/storage/

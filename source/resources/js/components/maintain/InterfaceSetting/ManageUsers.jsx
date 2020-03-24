@@ -4,7 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 
-import FormUser from './FormUser.js';
+import FormUser from './FormUser';
+import ListUsers from './ListUsers';
 
 class ManageUsers extends React.Component {
   constructor(props) {
@@ -29,11 +30,16 @@ class ManageUsers extends React.Component {
     	<div>
     		<Grid container spacing={2}>
 	            <Grid item xs={5}>
-	                <FormUser/>
-	            </Grid>
+                    <Grid container id={"huydv"} justify="center" spacing={2}>
+                        <div>
+                            <FormUser/>
+                            <div id={"error"}></div>
+                        </div>
+                    </Grid>
+                </Grid>
 	            <Grid item xs={5}>
 	                <Grid container id={"huydv"} justify="center" spacing={2}>
-						vvvv
+						<ListUsers/>
 	                </Grid>
 	            </Grid>
         	</Grid>

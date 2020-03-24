@@ -1,9 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import ReactDOM from 'react-dom';
 import FormPost from './Main/FormPost.js';
 import '../.././css/Main.css';
-import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
     root: {

@@ -14,4 +14,9 @@
 
 #form-user table tr td input{
 	width: 200px;
+	line-height: 24px;
+}
+
+#form-user table tr td input[type=submit]{
+    font-size: 20px;
 }

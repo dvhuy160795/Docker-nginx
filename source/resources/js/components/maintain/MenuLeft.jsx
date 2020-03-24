@@ -17,7 +17,7 @@ import People from '@material-ui/icons/People';
 import Person from '@material-ui/icons/PersonPin';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import ManageUsers from './InterfaceSetting/ManageUsers.js';
+import ManageUsers from './InterfaceSetting/ManageUsers';
 
 const drawerWidth = 240;
 
@@ -65,8 +65,8 @@ function MenuLeft(props) {
     };
     const switchIcons = (name) => {
         let config = {
-            'Users' : <Person/>, 
-            'Group Users' : <People/>, 
+            'Users' : <Person/>,
+            'Group Users' : <People/>,
             'Permissions' : <People/>
         };
         return config[name];

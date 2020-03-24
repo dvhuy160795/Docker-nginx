@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import '../../../css/maintain.css';
 import Grid from '@material-ui/core/Grid';
-import MenuLeft from "./menu";
+import MenuLeft from "./MenuLeft";
 
 const useStyles = makeStyles(theme => ({
     root: {

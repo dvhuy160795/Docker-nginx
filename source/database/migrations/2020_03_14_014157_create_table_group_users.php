@@ -20,7 +20,8 @@ class CreateTableGroupUsers extends Migration
             $table->json('group_user_permission');
             $table->string('user_member_created', 256);
             $table->string('user_member_updated', 256);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
