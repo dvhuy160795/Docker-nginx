@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
+import RowUser from './ListUsers/RowUser';
 
-import axios from 'axios';
+import '../../../../css/maintain/ListUsers.css';
 
-export default class FormPost extends Component {
-	constructor() {
-	    super();
-	    this.handleSubmit = this.handleSubmit.bind(this);
-  	}
-
-  	handleSubmit(event) {
-	    event.preventDefault();
-	    const data = new FormData(event.target);
-        axios.get('http://localhost:8888/maintain/getManageUsers', data)
-            .then(response => {
-                this.callback(response);
-            })
-            .catch(errors => {
-                const messagesError = Object.assign({}, errors).response.data;
-                ReactDOM.render(<Error errors={messagesError}/>, document.querySelector('#error'));
-            })
-  	}
-
-    callback(response) {
-        console.log(response);
-    }
-
+export default class ListUsers extends Component {
     render() {
         return (
-            <div>aaaaa</div>
+            <div style={{width:"100%", padding:"5px",}}>
+                <div className="header">
+                    Danh list users
+                </div>
+                <table id={"list-users"}>
+                    <tbody>
+                        {this.props.listUsers.map((user, i) => {
+                            return (<RowUser key={i} inforUser={user}/>)
+                        })}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

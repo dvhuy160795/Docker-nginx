@@ -1,51 +1,83 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
 
 import FormUser from './FormUser';
 import ListUsers from './ListUsers';
+import axios from "axios";
+import ReactDOM from "react-dom";
+import Error from '../../../lib/Error';
 
 class ManageUsers extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    	date: new Date()
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            listUsers: [],
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-  }
+    getInstance(){
+        return Object. assign({}, this);
+    }
 
-  componentDidMount() {
-  }
+    async getListManageUsers(){
+        return await axios.get('http://localhost:8000/maintain/getManageUsers')
+            .then(response => {
+                this.setState({listUsers: response.data});
+                return response.data;
+            })
+            .catch(errors => {
+                const messagesError = Object.assign({}, errors).response.data;
+                ReactDOM.render(<Error errors={messagesError}/>, document.querySelector('#error'));
+            });
+    }
 
-  componentWillUnmount() {  }
+    handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        axios.post('http://localhost:8000/maintain/postManageUsers', data)
+            .then((response) => {
+                this.handleSubmitCallback();
+            })
+            .catch(errors => {
+                // console.log(errors);
+                const messagesError = Object.assign({}, errors).response.data;
+                ReactDOM.render(<Error errors={messagesError}/>, document.querySelector('#error'));
+            });
+    }
 
-  render() {
-  	const mystyle = {
-      margin: 1,
-    };
+    handleSubmitCallback() {
+        this.getListManageUsers();
+    }
 
-    return (
-    	<div>
-    		<Grid container spacing={2}>
-	            <Grid item xs={5}>
-                    <Grid container id={"huydv"} justify="center" spacing={2}>
-                        <div>
-                            <FormUser/>
-                            <div id={"error"}></div>
-                        </div>
+    componentDidMount() {
+        this.getListManageUsers();
+    }
+
+    // componentWillUnmount() {
+    //
+    // }
+
+    render() {
+        return (
+            <div>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <Grid container id={"huydv111"} justify="center" spacing={2}>
+                            <ListUsers listUsers={this.state.listUsers}/>
+                        </Grid>
                     </Grid>
+                            <div style={{width: "100%"}}>
+                                <form id="form-user" onSubmit={this.handleSubmit}>
+                                    <FormUser/>
+                                </form>
+                                <div id={"error"}></div>
+                            </div>
+
                 </Grid>
-	            <Grid item xs={5}>
-	                <Grid container id={"huydv"} justify="center" spacing={2}>
-						<ListUsers/>
-	                </Grid>
-	            </Grid>
-        	</Grid>
-    	</div>
-    );
-  }
+            </div>
+        );
+    }
 }
 
 export default ManageUsers;
