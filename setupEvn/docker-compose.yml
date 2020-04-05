@@ -12,6 +12,7 @@ services:
     volumes:
      - .././source/public/:/home/source/public/
      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+     - .././nginx/:/var/log/nginx/
     # environment:
     #  - NGINX_HOST=huydvnginx.com
     #  - NGINX_PORT=80
