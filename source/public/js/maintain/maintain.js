@@ -71251,7 +71251,7 @@ var ManageUsers = /*#__PURE__*/function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('http://localhost:8000/maintain/getManageUsers').then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(root_url + '/maintain/getManageUsers').then(function (response) {
                   _this2.setState({
                     listUsers: response.data
                   });
@@ -71288,7 +71288,7 @@ var ManageUsers = /*#__PURE__*/function (_React$Component) {
 
       event.preventDefault();
       var data = new FormData(event.target);
-      axios__WEBPACK_IMPORTED_MODULE_5___default.a.post('http://localhost:8000/maintain/postManageUsers', data).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.post(root_url + '/maintain/postManageUsers', data).then(function (response) {
         _this3.handleSubmitCallback();
       })["catch"](function (errors) {
         // console.log(errors);
@@ -71989,7 +71989,10 @@ function Layout() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MenuLeft__WEBPACK_IMPORTED_MODULE_6__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
     item: true,
     xs: 10,
-    id: "huydv"
+    id: "huydv",
+    style: {
+      height: '87vh'
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
     item: true,
     xs: 12,

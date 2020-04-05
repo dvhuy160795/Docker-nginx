@@ -9,3 +9,6 @@
     </body>
     <script src="{{mix('js/maintain/maintain.js')}}" ></script>
 </html>
+<script>
+    var root_url = '<?=url("/")?>';
+</script>

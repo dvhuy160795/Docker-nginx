@@ -34,7 +34,7 @@ export default function Layout() {
                     <MenuLeft/>
                 </Grid>
             </Grid>
-            <Grid item xs={10} id={"huydv"}>
+            <Grid item xs={10} id={"huydv"} style={{height: '87vh'}}>
             </Grid>
             <Grid item xs={12} style={{position:"fixed",bottom:"2px" }} className="width100p">
                 <Grid container justify="center" spacing={spacing}>

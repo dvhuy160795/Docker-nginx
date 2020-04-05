@@ -21,7 +21,7 @@ class ManageUsers extends React.Component {
     }
 
     async getListManageUsers(){
-        return await axios.get('http://localhost:8000/maintain/getManageUsers')
+        return await axios.get(root_url + '/maintain/getManageUsers')
             .then(response => {
                 this.setState({listUsers: response.data});
                 return response.data;
@@ -35,7 +35,7 @@ class ManageUsers extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
-        axios.post('http://localhost:8000/maintain/postManageUsers', data)
+        axios.post(root_url + '/maintain/postManageUsers', data)
             .then((response) => {
                 this.handleSubmitCallback();
             })
