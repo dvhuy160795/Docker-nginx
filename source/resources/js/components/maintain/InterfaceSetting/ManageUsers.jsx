@@ -67,12 +67,12 @@ class ManageUsers extends React.Component {
                             <ListUsers listUsers={this.state.listUsers}/>
                         </Grid>
                     </Grid>
-                            <div style={{width: "100%"}}>
-                                <form id="form-user" onSubmit={this.handleSubmit}>
-                                    <FormUser/>
-                                </form>
-                                <div id={"error"}></div>
-                            </div>
+                    <div style={{width: "100%"}}>
+                        <form id="form-user" onSubmit={this.handleSubmit}>
+                            <FormUser/>
+                        </form>
+                        <div id={"error"}></div>
+                    </div>
 
                 </Grid>
             </div>

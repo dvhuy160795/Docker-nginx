@@ -9,7 +9,7 @@ use App\User;
 class ManageUsersController extends Controller
 {
     public function index() {
-        return [11111];
+//        return [11111];
     }
 
     public function postUser(Request $request) {

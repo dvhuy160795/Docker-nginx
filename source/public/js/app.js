@@ -16475,7 +16475,7 @@ function toVal(mix) {
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/Main.css":
 /*!****************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/css/Main.css ***!
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./resources/css/Main.css ***!
   \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -69651,7 +69651,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--5-1!../../node_modules/postcss-loader/src??ref--5-2!./Main.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/Main.css");
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--7-1!../../node_modules/postcss-loader/src??ref--7-2!./Main.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/Main.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -69953,14 +69953,38 @@ var FormPost = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/scss/app.scss":
+/*!*********************************!*\
+  !*** ./resources/scss/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/scss/maintain.scss":
+/*!**************************************!*\
+  !*** ./resources/scss/maintain.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!************************************!*\
-  !*** multi ./resources/js/app.jsx ***!
-  \************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/app.jsx ./resources/scss/app.scss ./resources/scss/maintain.scss ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vanhuy/projects/Docker-nginx/source/resources/js/app.jsx */"./resources/js/app.jsx");
+__webpack_require__(/*! /Users/vanhuy/projects/Docker-nginx/source/resources/js/app.jsx */"./resources/js/app.jsx");
+__webpack_require__(/*! /Users/vanhuy/projects/Docker-nginx/source/resources/scss/app.scss */"./resources/scss/app.scss");
+module.exports = __webpack_require__(/*! /Users/vanhuy/projects/Docker-nginx/source/resources/scss/maintain.scss */"./resources/scss/maintain.scss");
 
 
 /***/ })

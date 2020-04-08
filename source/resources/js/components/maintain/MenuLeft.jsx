@@ -128,6 +128,7 @@ function MenuLeft(props) {
                         anchor={theme.direction === 'rtl' ? 'right' : 'left'}
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
+                        style={{top:"auto"}}
                         classes={{
                             paper: classes.drawerPaper,
                         }}
