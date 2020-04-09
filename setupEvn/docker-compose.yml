@@ -53,7 +53,8 @@ services:
       - my-network
     volumes:
       - .././source:/home/source
-      - ./images/Php/Config:/usr/local/etc_get_config
+      - ./images/Php/Config/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./images/Php/Config/etc/php/php.ini-development:/usr/local/etc/php/php.ini-development
     ports:
       - 8889:80
 #network
