@@ -1,0 +1,14 @@
+FROM nginx
+
+RUN apt-get update
+RUN apt-get install curl -y
+RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
+RUN apt-get -y install nodejs
+RUN npm install
+
+WORKDIR /home/Docker
+COPY ./ /
+ONBUILD RUN chmod -R 777 /home/Docker/storage/
+ENV NGINX_HOST=huydvnginx.com
+ENV NGINX_PORT=80
+
