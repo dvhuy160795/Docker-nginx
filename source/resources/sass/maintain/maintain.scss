@@ -1,0 +1,34 @@
+#list-users {
+    tr{
+        td{
+            text-align: center;
+            width: 200px;
+            button{
+                padding: 5px;
+                width: 50px;
+                border-radius:5px;
+            }
+        }
+        th{
+            text-align: left;
+            width: 150px;
+        }
+        td,th{
+            border: thin solid lightgrey;
+            padding: 5px;
+        }
+    }
+    font-family: sans-serif;
+}
+
+ul.pagination {
+    list-style: none;
+    display: inline-flex;
+    li{
+        margin: 0 4px;
+        a{
+            padding: 3px;
+            border: thin solid #0f6674;
+        }
+    }
+}

@@ -2,27 +2,27 @@
     font-family: sans-serif;
 }
 
-#form-user table tr th {
+#form-user>table tr th {
 	text-align: left;
 	width: 150px;
 }
 
-#form-user table tr td{
+#form-user>table tr td{
 	text-align: center;
 	width: 200px;
 }
 
-#form-user table tr td,th{
+#form-user>table tr td,th{
     border: thin solid lightgrey;
     padding: 5px;
 }
 
-#form-user table tr td input{
+#form-user>table tr td input{
 	width: 400px;
 	line-height: 24px;
     border-radius: 5px;
 }
 
-#form-user table tr td input[type=submit]{
+#form-user>table tr td input[type=submit]{
     font-size: 20px;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../../../../css/maintain/FormUser.css';
+// import '../../../../css/maintain/FormUser.css';
 
 export default class FormUser extends Component {
     getConFigField() {

@@ -4,45 +4,34 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navbar from './Navbar';
 import '../../../css/maintain.css';
 import Grid from '@material-ui/core/Grid';
-import MenuLeft from "./MenuLeft";
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        height: 140,
-        width: 100,
-    },
-    control: {
-        padding: theme.spacing(2),
-    },
-}));
+import ManageUsers from './InterfaceSetting/ManageUsers';
 
 export default function Layout() {
-    const [spacing, setSpacing] = React.useState(2);
-    const classes = useStyles();
-
-    const handleChange = event => {
-        setSpacing(Number(event.target.value));
-    };
-
     return (
-        <Grid container className={classes.root} spacing={2} style={{height: '87vh'}}>
-            <Grid item xs={12} className="width100p">
-                <Grid container justify="center" spacing={spacing}>
-                    <Navbar/>
-                </Grid>
-            </Grid>
-            <Grid item xs={2}>
-                <Grid container justify="center" spacing={spacing}>
-                    <MenuLeft/>
-                </Grid>
-            </Grid>
-            <Grid item xs={10} id={"huydv"} style={{height: '87vh'}}>
-            </Grid>
-
-        </Grid>
+        <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <Navbar/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-12" id={"button"}>
+                    <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <button type="button" className="btn btn-secondary">Left</button>
+                        <button type="button" className="btn btn-secondary">Middle</button>
+                        <button type="button" className="btn btn-secondary">Right</button>
+                    </div>
+                    </div>  
+                </div>
+                <div className="row">
+                    <div className="col-md-12" id={"huydv"} style={{height: '87vh'}}>
+                        <ManageUsers/>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
     );
 }
 

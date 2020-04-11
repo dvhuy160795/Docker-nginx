@@ -6,12 +6,13 @@ import ListUsers from './ListUsers';
 import axios from "axios";
 import ReactDOM from "react-dom";
 import Error from '../../../lib/Error';
+import Async from 'react-async';
 
 class ManageUsers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listUsers: [],
+            listUsers: null,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -59,22 +60,40 @@ class ManageUsers extends React.Component {
     // }
 
     render() {
+        this.getListManageUsers();
         return (
             <div>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Grid container id={"huydv111"} justify="center" spacing={2}>
-                            <ListUsers listUsers={this.state.listUsers}/>
-                        </Grid>
-                    </Grid>
-                    <div style={{width: "100%"}}>
-                        <form id="form-user" onSubmit={this.handleSubmit}>
-                            <FormUser/>
-                        </form>
-                        <div id={"error"}></div>
-                    </div>
+            <Async promiseFn={this.getListManageUsers()}>
+                {({ data, err, isLoading }) => {
+                    console.log(data);
+                  if (isLoading) return "Loading..."
+                  if (err) return `Something went wrong: ${err.message}`
 
-                </Grid>
+                  if (data)
+                    return (
+                      <div>
+                        <div>
+                          <h2>React Async - Random Users</h2>
+                        </div>
+                        {data.map(user=> (
+                          <div key={user.username} className="row">
+                            <div className="col-md-12">
+                              <p>{user.name}</p>
+                              <p>{user.email}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )
+                }}
+            </Async>
+                <ListUsers listUsers={this.state.listUsers}/>
+                    {/*<div style={{width: "100%"}}>*/}
+                    {/*    <form id="form-user" onSubmit={this.handleSubmit}>*/}
+                    {/*        <FormUser/>*/}
+                    {/*    </form>*/}
+                    {/*    <div id={"error"}></div>*/}
+                    {/*</div>*/}
             </div>
         );
     }

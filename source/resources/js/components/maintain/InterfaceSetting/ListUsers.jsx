@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import RowUser from './ListUsers/RowUser';
 import Pagination from "react-js-pagination";
 
-import '../../../../scss/maintain/ListUsers.scss';
-
 export default class ListUsers extends Component {
     constructor(props) {
         super(props);
@@ -20,10 +18,16 @@ export default class ListUsers extends Component {
     render() {
         return (
             <div style={{width:"100%", padding:"5px",}}>
-                <div className="header">
-                    Danh list users
-                </div>
-                <table id={"list-users"}>
+                <table className="table table-striped table-inverse table-hover">
+                    <thead>
+                        <tr>
+                            <th>user_code</th>
+                            <th>user_name</th>
+                            <th>user_phone</th>
+                            <th>user_address</th>
+                            <th></th>
+                        </tr>
+                    </thead>
                     <tbody>
                         {this.props.listUsers.map((user, i) => {
                             return (<RowUser key={i} inforUser={user}/>)
@@ -34,7 +38,7 @@ export default class ListUsers extends Component {
                     <Pagination
                         activePage={this.state.activePage}
                         itemsCountPerPage={10}
-                        totalItemsCount={450}
+                        totalItemsCount={this.props.listUsers.length}
                         pageRangeDisplayed={5}
                         onChange={this.handlePageChange.bind(this)}
                     />
