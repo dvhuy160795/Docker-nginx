@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app/app.css": "/css/app/app.css",
-    "/css/maintain/maintain.css": "/css/maintain/maintain.css",
-    "/js/maintain/maintain.js": "/js/maintain/maintain.js"
+    "/js/app.js": "/js/app.js?id=613d895e8e46c11580c7",
+    "/css/app/app.css": "/css/app/app.css?id=d41d8cd98f00b204e980",
+    "/lib/lodash/lodash.min.js": "/lib/lodash/lodash.min.js?id=913a2917447f6e4243fc",
+    "/lib/vue/vue.min.js": "/lib/vue/vue.min.js?id=6c81f02ad0bf8e12a66c",
+    "/lib/vuex/vuex.min.js": "/lib/vuex/vuex.min.js?id=88c7e1893e1d6de8543e",
+    "/lib/vue_router/vue-router.min.js": "/lib/vue_router/vue-router.min.js?id=5fa4ed96a441f3b8e391"
 }
