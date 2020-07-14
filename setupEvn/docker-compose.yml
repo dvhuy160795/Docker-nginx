@@ -13,7 +13,7 @@ services:
       - .././nginx/:/var/log/nginx/
     depends_on:
       - api
-
+      - app
   api:
     build:
       dockerfile: Php/DockerfilePhp
@@ -27,19 +27,14 @@ services:
       - ./images/Php/Config/etc/php/php.ini-development:/usr/local/etc/php/php.ini-development
     ports:
       - 9002:9000
-#  app:
-#    build:
-#      dockerfile: Php/DockerfilePhp
-#      context: ./images/
-#    restart: always
-#    depends_on:
-#      - db
-#    volumes:
-#      - .././source:/var/www/html
-#      - ./images/Php/Config/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
-#      - ./images/Php/Config/etc/php/php.ini-development:/usr/local/etc/php/php.ini-development
-#    ports:
-#      - 9001:9000
+  app:
+    build:
+      context: ./images/App
+    restart: always
+    volumes:
+      - .././source:/var/www/html
+    ports:
+      - 9999:80
   db:
     build:
       dockerfile: Mysql/DockerfileMysql
