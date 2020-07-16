@@ -13,9 +13,3 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app/app.scss', 'public/css/app').version();
-
-// Libs
-mix.copy('node_modules/lodash/lodash.min.js', 'public/lib/lodash')
-    .copy('node_modules/vue/dist/vue.min.js', 'public/lib/vue')
-    .copy('node_modules/vuex/dist/vuex.min.js', 'public/lib/vuex')
-    .copy('node_modules/vue-router/dist/vue-router.min.js', 'public/lib/vue_router');
